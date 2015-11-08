@@ -102,7 +102,7 @@ class StreamExtensions {
   }
 
   static <T> void rightShift(final Stream<T> selfType, final List<T> other) {
-    selfType.consume { other.add(it) }
+    selfType.observe { other.add(it) }
     Streams.await(selfType)
   }
 
